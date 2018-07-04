@@ -47,7 +47,9 @@
         <div class="gf-form max-width-30">
             <span class="gf-form-label width-7">Auth</span>
             <div class="gf-form-select-wrapper gf-form-select-wrapper--has-help-icon max-width-24">
-                <select class="gf-form-input" ng-model="ctrl.current.jsonData.authMode" ng-options="f for f in ['Keystone', 'Horizon', 'Token']"></select>
+                <select class="gf-form-input" ng-model="ctrl.current.jsonData.authMode"
+                    ng-change="authModeChanged()"
+                    ng-options="f for f in ['Keystone', 'Horizon', 'Token']"></select>
                 <info-popover mode="right-absolute">
                     Keystone = Authenticate against Keystone (requires Keystone support in Grafana)<br>
                     Horizon = Use Horizon session for authentication (requires direct access and monasca-ui Horizon plugin)<br>
